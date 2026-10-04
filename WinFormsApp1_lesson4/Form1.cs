@@ -15,7 +15,9 @@ namespace WinFormsApp1_lesson4
            
             bleckList = new DBHandler(db,false);
             LoadBleckList();
-            
+            timer.Tick += Timer_Tick;
+            timer.Interval = 1000 * 10;
+
         }
         private void LoadBleckList()
         {
@@ -164,9 +166,17 @@ namespace WinFormsApp1_lesson4
        
         private void buttonDetect_Click(object sender, EventArgs e)
         {
-            timer .Tick+= Timer_Tick;
-            timer.Interval = 1000*10;
-            timer.Start();
+            if (timer.Enabled)
+            {
+                timer.Stop();
+                buttonDetect.Text = "Start Detection";
+            }
+            else
+            {
+                timer.Start();
+                buttonDetect.Text = "Stop Detection";
+            }
+            
         }
         private  void Timer_Tick(object? sender, EventArgs e)
         {

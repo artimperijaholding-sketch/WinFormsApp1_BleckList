@@ -177,7 +177,7 @@
             // 
             buttonDetect.Location = new Point(329, 194);
             buttonDetect.Name = "buttonDetect";
-            buttonDetect.Size = new Size(75, 23);
+            buttonDetect.Size = new Size(143, 25);
             buttonDetect.TabIndex = 14;
             buttonDetect.Text = "Detect";
             buttonDetect.UseVisualStyleBackColor = true;
